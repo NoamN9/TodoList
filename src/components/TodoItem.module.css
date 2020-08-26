@@ -1,0 +1,41 @@
+.li {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox {
+  margin: 5px;
+}
+
+.iteminput {
+  margin: 5px;
+  outline: none;
+}
+
+.savebutton{
+    margin: 5px;
+    cursor: pointer;
+    padding: 5px 5px;
+    color: white;
+    background-color: #4d4d4d;
+  }
+  .savebutton:hover {
+    background-color: #bdbdbd;
+    color: #4d4d4d;
+  }
+
+.itemtext {
+    margin: 5px;
+}
+
+.removebutton {
+    margin: 5px;
+    cursor: pointer;
+    padding: 5px 5px;
+    color: white;
+    background-color: #4d4d4d;
+}
+.removebutton:hover {
+    background-color: #bdbdbd;
+    color: #4d4d4d;
+  }
