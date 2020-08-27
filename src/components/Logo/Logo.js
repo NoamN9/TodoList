@@ -1,10 +1,11 @@
 import React from "react";
 import Picture from "./MytoDoListLogo.png";
+import classes from "./Logo.module.css";
 
-const Logo = (props) => {
+const Logo = () => {
   return (
   
-       <img src={Picture} style={{width: '35%',height:'30%',padding:'20px'}}/>
+       <img className={classes.Logo} src={Picture} alt=""/>
   );
 };
 

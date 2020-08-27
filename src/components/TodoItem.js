@@ -1,26 +1,26 @@
 import React from "react";
 import classes from "./TodoItem.module.css";
 
-const TodoItem = (props) => {
+const TodoItem = ({text,key,onCheckbox,index,onEdittextitem,onRemoveClick,edit,onEdittext}) => {
   return (
     <>
-      <li className={classes.li} style={{}}>
+      <li className={classes.li}>
         
           
-        <input  className={classes.checkbox} type="checkbox" onChange={() => props.onCheckbox(props.index)} />
-          {props.edit ? (
+        <input  className={classes.checkBox} type="checkbox" onChange={() => onCheckbox(index)} />
+          {edit ? (
             <>
-            <input className={classes.iteminput} type="text" value={props.text} onChange={(e)=>props.onEdittextitem(props.index,e.target.value)} style={{margin:'5px'}} />
-            <button  className={classes.savebutton} onClick={()=>props.onEdittext(props.index)}>Save edit</button>
+            <input className={classes.itemInput} type="text" value={text} onChange={(e)=>onEdittextitem(index,e.target.value)}  />
+            <button  className={classes.saveButton} onClick={()=>onEdittext(index)}>Save edit</button>
             </>
           ) : (
-            <div  className={classes.itemtext} onClick={() => props.onEdittext(props.index)}>
-              {props.text}
+            <div  className={classes.itemText} onClick={() => onEdittext(index)}>
+              {text}
             </div>
           )}
        
       
-        <button  className={classes.removebutton} onClick={() => props.onRemoveClick(props.index)} >Remove</button>
+        <button  className={classes.removeButton} onClick={() => onRemoveClick(index)} >Remove</button>
       </li>
     </>
   );

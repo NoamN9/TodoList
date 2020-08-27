@@ -75,10 +75,10 @@ class TodoList extends React.Component {
         <ul style={{ listStyleType: "none" }}>
           {this.state.todos.map((todo, index) => {
             return (
-              <div>
+            
                 <Todoitem
-                  text={todo.text}
                   key={todo.id}
+                  text={todo.text}
                   onCheckbox={this.onCheckBox}
                   index={index}
                   edit={todo.edit}
@@ -86,7 +86,7 @@ class TodoList extends React.Component {
                   onEdittext={this.onEdittext}
                   onEdittextitem={this.onEdittextitem}
                 />
-              </div>
+    
             );
           })}
         </ul>
