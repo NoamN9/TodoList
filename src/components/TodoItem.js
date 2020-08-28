@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./TodoItem.module.css";
 
-const TodoItem = ({text,key,onCheckbox,index,onEdittextitem,onRemoveClick,edit,onEdittext}) => {
+const TodoItem = ({text,onCheckbox,index,onEdittextitem,onRemoveClick,edit,onEdittext}) => {
   return (
     <>
       <li className={classes.li}>

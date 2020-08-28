@@ -37,11 +37,20 @@ class TodoList extends React.Component {
     });
   }
 
+  
+
   onCheckBox(index) {
-    const newtodos = this.state.todos.slice();
-    newtodos[index].checked = !newtodos[index].checked;
-    this.setState({ todos: newtodos });
+    this.setState((oldState) => {
+      const newstate = oldState.todos.slice();
+      newstate[index].checked = !newstate[index].checked;
+      console.log(newstate)
+      return{
+        inputText: 'lalalal',
+        todos: newstate,
+      };
+    });
   }
+
   onRemoveClick(index) {
     const newtodos = this.state.todos.slice();
     let filtertodo = newtodos.filter((todo, i) => {
