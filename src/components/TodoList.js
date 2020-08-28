@@ -37,36 +37,37 @@ class TodoList extends React.Component {
     });
   }
 
-  
-
   onCheckBox(index) {
-    this.setState((oldState) => {
-      const newstate = oldState.todos.slice();
-      newstate[index].checked = !newstate[index].checked;
-      console.log(newstate)
-      return{
-        inputText: 'lalalal',
-        todos: newstate,
-      };
-    });
+    this.setState((oldState) => ({
+      inputText: oldState.inputText,
+      todos: oldState.todos.map((todo, i) =>
+        i === index ? { ...todo, checked: !todo.checked } : todo
+      ),
+    }));
   }
 
   onRemoveClick(index) {
-    const newtodos = this.state.todos.slice();
-    let filtertodo = newtodos.filter((todo, i) => {
-      return i !== index;
-    });
-    this.setState({ todos: filtertodo });
+    this.setState((oldState) => ({
+      inputText: oldState.inputText,
+      todos: oldState.todos.filter((todo, i) => i !== index),
+    }));
   }
+
   onEdittext(index) {
-    const newtodos = this.state.todos.slice();
-    newtodos[index].edit = !newtodos[index].edit;
-    this.setState({ todos: newtodos });
+    this.setState((oldState) => ({
+      inputText: oldState.inputText,
+      todos: oldState.todos.map((todo, i) =>
+        i === index ? { ...todo, edit: !todo.edit } : todo
+      ),
+    }));
   }
   onEdittextitem(index, textvalue) {
-    const newtodos = this.state.todos.slice();
-    newtodos[index].text = textvalue;
-    this.setState({ todos: newtodos });
+    this.setState((oldState) => ({
+      inputText: oldState.inputText,
+      todos: oldState.todos.map((todo, i) =>
+        i === index ? { ...todo, text: textvalue } : todo
+      ),
+    }));
   }
 
   render() {
