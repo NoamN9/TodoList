@@ -69,24 +69,29 @@ class TodoList extends React.Component {
           onChange={this.handleChange}
           size="35"
         />
-        <button onClick={this.OnClickButton} className={classes.addbutton}>
-          Add
-        </button>
+        {this.state.inputText.length < 1 ? (
+          <button disabled className={classes.disabledbutton}>
+            Add
+          </button>
+        ) : (
+          <button onClick={this.OnClickButton} className={classes.addbutton}>
+            Add
+          </button>
+        )}
+
         <ul style={{ listStyleType: "none" }}>
           {this.state.todos.map((todo, index) => {
             return (
-            
-                <Todoitem
-                  key={todo.id}
-                  text={todo.text}
-                  onCheckbox={this.onCheckBox}
-                  index={index}
-                  edit={todo.edit}
-                  onRemoveClick={this.onRemoveClick}
-                  onEdittext={this.onEdittext}
-                  onEdittextitem={this.onEdittextitem}
-                />
-    
+              <Todoitem
+                key={todo.id}
+                text={todo.text}
+                onCheckbox={this.onCheckBox}
+                index={index}
+                edit={todo.edit}
+                onRemoveClick={this.onRemoveClick}
+                onEdittext={this.onEdittext}
+                onEdittextitem={this.onEdittextitem}
+              />
             );
           })}
         </ul>

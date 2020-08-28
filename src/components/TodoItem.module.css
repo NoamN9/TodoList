@@ -1,5 +1,9 @@
 :root {
   --bg-button-color: #4d4d4d;
+  --bg-button-hovercolor: #bdbdbd;
+  --text-button:white;
+  --text-buttonhover:#4d4d4d;
+  
 }
 
 .li {
@@ -22,12 +26,12 @@
   margin: 5px;
   cursor: pointer;
   padding: 5px 5px;
-  color: white;
+  color: var(--text-button);
   background-color: var(--bg-button-color);
 }
 .saveButton:hover {
-  background-color: #bdbdbd;
-  color: #4d4d4d;
+  background-color:var(--bg-button-hovercolor);
+  color:var(--text-buttonhover);
 }
 
 .itemText {
@@ -38,10 +42,10 @@
   margin: 5px;
   cursor: pointer;
   padding: 5px 5px;
-  color: white;
+  color: var(--text-button);
   background-color: var(--bg-button-color);
 }
 .removeButton:hover {
-  background-color: #bdbdbd;
-  color: #4d4d4d;
+  background-color: var(--bg-button-hovercolor);
+  color: var(--text-buttonhover);
 }
